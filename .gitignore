@@ -1,0 +1,17 @@
+# Troop Worktrees
+.worktrees/
+
+# Binaries
+bin/
+*.exe
+
+# Test coverage
+coverage.out
+
+# Local overrides
+*.local
+.batteryrc.local
+.batteryrc.*.local
+
+# OS Artifacts
+.DS_Store
