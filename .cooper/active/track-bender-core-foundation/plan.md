@@ -31,10 +31,10 @@ Status: `in_progress`
   - [x] Sub-task: Write tests for JSON-RPC 2.0 request/response/error marshaling (Red)
   - [x] Sub-task: Implement `pkg/mcp/protocol.go` and MCP protocol types (Green)
   - [x] Sub-task: Refactor & verify test coverage >80% (Refactor)
-- [ ] Task 2.2: Stdio MCP Server & Dynamic Dispatcher
-  - [ ] Sub-task: Write tests for `initialize`, `tools/list`, `tools/call`, `resources/*`, `prompts/*` (Red)
-  - [ ] Sub-task: Implement `pkg/mcp/server.go` and handler registration (Green)
-  - [ ] Sub-task: Refactor & verify test coverage >80% (Refactor)
+- [x] Task 2.2: Stdio MCP Server & Dynamic Dispatcher (142d346)
+  - [x] Sub-task: Write tests for `initialize`, `tools/list`, `tools/call`, `resources/*`, `prompts/*` (Red)
+  - [x] Sub-task: Implement `pkg/mcp/server.go` and handler registration (Green)
+  - [x] Sub-task: Refactor & verify test coverage >80% (Refactor)
 - [ ] Task 2.3: Multi-Client MCP Configuration Installer
   - [ ] Sub-task: Write tests for merging config into Cursor, Claude Desktop, Antigravity JSON (Red)
   - [ ] Sub-task: Implement `pkg/mcp/installer.go` with path discovery and atomic JSON merging (Green)
