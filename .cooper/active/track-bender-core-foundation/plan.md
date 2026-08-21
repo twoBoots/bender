@@ -61,9 +61,9 @@ Status: `in_progress`
   - [x] Sub-task: Write CLI test for template subcommand demonstrating consumer extension (Red)
   - [x] Sub-task: Implement `cmd/example.go` (Green)
   - [x] Sub-task: Refactor & verify test coverage >80% (Refactor)
-- [ ] Task 3.5: Phase 3 Verification & Checkpoint
-  - [ ] Sub-task: Run all CLI suite tests and verify coverage >80%
-  - [ ] Sub-task: Synchronize upstream rules (`git fetch origin main`) and record checkpoint
+- [x] Task 3.5: Phase 3 Verification & Checkpoint [checkpoint: 6f283b5]
+  - [x] Sub-task: Run all CLI suite tests and verify coverage >80%
+  - [x] Sub-task: Synchronize upstream rules (`git fetch origin main`) and record checkpoint
 
 ## Phase 4: Packaging, Automation & Final Validation
 
