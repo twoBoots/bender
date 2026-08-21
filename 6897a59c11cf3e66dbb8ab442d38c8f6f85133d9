@@ -1,0 +1,3 @@
+Task: Task 4.2 - CI & Multi-Arch Release GitHub Workflows
+Scope: .github/workflows/ci.yml, .github/workflows/release.yml
+Summary: Configured automated Go CI and 5-target multi-architecture release matrix (Darwin/Linux/Windows)
