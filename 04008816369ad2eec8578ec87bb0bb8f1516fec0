@@ -1,0 +1,3 @@
+Task: Task 1.4 - In-Place Atomic Binary Replacement & Codesigning
+Scope: pkg/updater/updater.go, pkg/updater/updater_test.go
+Summary: Implemented generic atomic SelfUpdate with macOS codesigning and Windows rollback support (81.1% coverage)
