@@ -43,3 +43,14 @@ func TestRootCmd_Help(t *testing.T) {
 		t.Errorf("expected help output to contain 'Usage:', got %q", out)
 	}
 }
+
+func TestRootCmd_SemVerFormat(t *testing.T) {
+	// Verify that the default Version in cmd package follows SemVer (X.Y.Z)
+	if cmd.Version == "" {
+		t.Fatal("cmd.Version must not be empty")
+	}
+	parts := strings.Split(cmd.Version, ".")
+	if len(parts) < 3 {
+		t.Errorf("cmd.Version %q is not valid SemVer (expected at least 3 parts: major.minor.patch)", cmd.Version)
+	}
+}
