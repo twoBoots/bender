@@ -1,0 +1,3 @@
+Task: Task 1: Update GitHub Actions workflows
+Scope: .github/workflows/ci.yml, .github/workflows/release.yml
+Summary: Configured top-level environment variables (FORCE_JAVASCRIPT_ACTIONS_TO_NODE20: true, NODE_NO_WARNINGS: 1) across ci.yml and release.yml to prevent Node deprecation warnings.
