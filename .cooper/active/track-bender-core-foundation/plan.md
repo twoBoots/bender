@@ -13,10 +13,10 @@ Status: `in_progress`
   - [x] Sub-task: Write unit tests for OS/Arch mapping across Darwin, Linux, Windows (Red)
   - [x] Sub-task: Implement `pkg/updater/platform.go` (Green)
   - [x] Sub-task: Refactor & verify test coverage >80% (Refactor)
-- [ ] Task 1.3: GitHub Releases API Client
-  - [ ] Sub-task: Write HTTP mock tests for `FetchLatestRelease` and `FetchReleaseByTag` (Red)
-  - [ ] Sub-task: Implement `pkg/updater/client.go` with zero external dependencies (Green)
-  - [ ] Sub-task: Refactor & verify test coverage >80% (Refactor)
+- [x] Task 1.3: GitHub Releases API Client (f800bca)
+  - [x] Sub-task: Write HTTP mock tests for `FetchLatestRelease` and `FetchReleaseByTag` (Red)
+  - [x] Sub-task: Implement `pkg/updater/client.go` with zero external dependencies (Green)
+  - [x] Sub-task: Refactor & verify test coverage >80% (Refactor)
 - [ ] Task 1.4: In-Place Atomic Binary Replacement & Codesigning
   - [ ] Sub-task: Write unit tests for atomic swap, temp file generation, and rollback (Red)
   - [ ] Sub-task: Implement `pkg/updater/updater.go` with macOS quarantine stripping & codesign (Green)
