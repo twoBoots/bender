@@ -73,9 +73,9 @@ Status: `in_progress`
 - [x] Task 4.2: CI & Multi-Arch Release GitHub Workflows (6897a59)
   - [x] Sub-task: Implement `.github/workflows/ci.yml` (test, race, lint, coverage)
   - [x] Sub-task: Implement `.github/workflows/release.yml` (5-target matrix: linux/amd64, linux/arm64, darwin/amd64, darwin/arm64, windows/amd64)
-- [ ] Task 4.3: End-to-End Test Suite & Living Spec Reconciliation
-  - [ ] Sub-task: Verify entire test suite with race detector and coverage >80%
-  - [ ] Sub-task: Reconcile spec-deltas into living specs (`.cooper/specs/`)
+- [x] Task 4.3: End-to-End Test Suite & Living Spec Reconciliation (336cc9a)
+  - [x] Sub-task: Verify entire test suite with race detector and coverage >80%
+  - [x] Sub-task: Reconcile spec-deltas into living specs (`.cooper/specs/`)
 - [ ] Task 4.4: Phase 4 Verification & Final Checkpoint
   - [ ] Sub-task: Synchronize with `origin/main` and verify clean build
   - [ ] Sub-task: Push checkpoint commits to remote
