@@ -35,10 +35,10 @@ Status: `in_progress`
   - [x] Sub-task: Write tests for `initialize`, `tools/list`, `tools/call`, `resources/*`, `prompts/*` (Red)
   - [x] Sub-task: Implement `pkg/mcp/server.go` and handler registration (Green)
   - [x] Sub-task: Refactor & verify test coverage >80% (Refactor)
-- [ ] Task 2.3: Multi-Client MCP Configuration Installer
-  - [ ] Sub-task: Write tests for merging config into Cursor, Claude Desktop, Antigravity JSON (Red)
-  - [ ] Sub-task: Implement `pkg/mcp/installer.go` with path discovery and atomic JSON merging (Green)
-  - [ ] Sub-task: Refactor & verify test coverage >80% (Refactor)
+- [x] Task 2.3: Multi-Client MCP Configuration Installer (e2fc471)
+  - [x] Sub-task: Write tests for merging config into Cursor, Claude Desktop, Antigravity JSON (Red)
+  - [x] Sub-task: Implement `pkg/mcp/installer.go` with path discovery and atomic JSON merging (Green)
+  - [x] Sub-task: Refactor & verify test coverage >80% (Refactor)
 - [ ] Task 2.4: Phase 2 Verification & Checkpoint
   - [ ] Sub-task: Run all package tests with `-race` and verify coverage >80%
   - [ ] Sub-task: Synchronize upstream rules (`git fetch origin main`) and record checkpoint
