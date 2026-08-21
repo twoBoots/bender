@@ -1,0 +1,3 @@
+Task: Documentation & Initial Tag
+Scope: README.md, git tag v1.0.0
+Summary: Documented automated SemVer release tagging in CI/CD features and Go module dependency resolution via 'go get github.com/twoBoots/bender@v1.0.0'. Tagged baseline v1.0.0.
