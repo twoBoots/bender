@@ -1,0 +1,3 @@
+Task: Task 4.1 - Parameterized 3-Tier install.sh
+Scope: install.sh
+Summary: Implemented 3-tier installation script with local Go compilation, release downloading, and codesigning
