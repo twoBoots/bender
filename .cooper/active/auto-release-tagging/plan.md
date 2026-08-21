@@ -5,9 +5,9 @@
   - [x] Sub-task: Add auto-tagging step detecting `Version` from `cmd/root.go`
   - [x] Sub-task: Add tag existence check and push via `GITHUB_TOKEN`
   - [x] Sub-task: Update `publish-release` to tag release with `v${VERSION}` and alias `latest`
-- [~] Task 2: Documentation & Initial Tag
-  - [ ] Sub-task: Update `README.md` with release workflow documentation
-  - [ ] Sub-task: Tag baseline `v1.0.0`
+- [x] Task 2: Documentation & Initial Tag (678ccb7)
+  - [x] Sub-task: Update `README.md` with release workflow documentation
+  - [x] Sub-task: Tag baseline `v1.0.0`
 - [ ] Task 3: Phase 1 Verification & Checkpoint
   - [ ] Sub-task: Run local tests `go test -v ./...`
   - [ ] Sub-task: Record Git Notes checkpoint summary
