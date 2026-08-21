@@ -45,10 +45,10 @@ Status: `in_progress`
 
 ## Phase 3: Cobra CLI Interface & Commands (`cmd/` & `main.go`)
 
-- [ ] Task 3.1: Root Command & Version Injection
-  - [ ] Sub-task: Write CLI tests for `-v`, `--version`, `version` output (Red)
-  - [ ] Sub-task: Implement `cmd/root.go` and `main.go` with `-ldflags` variables (Green)
-  - [ ] Sub-task: Refactor & verify test coverage >80% (Refactor)
+- [x] Task 3.1: Root Command & Version Injection (d10590e)
+  - [x] Sub-task: Write CLI tests for `-v`, `--version`, `version` output (Red)
+  - [x] Sub-task: Implement `cmd/root.go` and `main.go` with `-ldflags` variables (Green)
+  - [x] Sub-task: Refactor & verify test coverage >80% (Refactor)
 - [ ] Task 3.2: Self-Update CLI Subcommand
   - [ ] Sub-task: Write CLI tests for `bender update` and `--force` flags (Red)
   - [ ] Sub-task: Implement `cmd/update.go` delegating to `pkg/updater` (Green)
