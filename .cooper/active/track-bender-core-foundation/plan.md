@@ -17,10 +17,10 @@ Status: `in_progress`
   - [x] Sub-task: Write HTTP mock tests for `FetchLatestRelease` and `FetchReleaseByTag` (Red)
   - [x] Sub-task: Implement `pkg/updater/client.go` with zero external dependencies (Green)
   - [x] Sub-task: Refactor & verify test coverage >80% (Refactor)
-- [ ] Task 1.4: In-Place Atomic Binary Replacement & Codesigning
-  - [ ] Sub-task: Write unit tests for atomic swap, temp file generation, and rollback (Red)
-  - [ ] Sub-task: Implement `pkg/updater/updater.go` with macOS quarantine stripping & codesign (Green)
-  - [ ] Sub-task: Refactor & verify test coverage >80% (Refactor)
+- [x] Task 1.4: In-Place Atomic Binary Replacement & Codesigning (0400881)
+  - [x] Sub-task: Write unit tests for atomic swap, temp file generation, and rollback (Red)
+  - [x] Sub-task: Implement `pkg/updater/updater.go` with macOS quarantine stripping & codesign (Green)
+  - [x] Sub-task: Refactor & verify test coverage >80% (Refactor)
 - [ ] Task 1.5: Phase 1 Verification & Checkpoint
   - [ ] Sub-task: Run all package tests with `-race` and verify coverage >80%
   - [ ] Sub-task: Synchronize upstream rules (`git fetch origin main`) and record checkpoint
