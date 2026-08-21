@@ -49,10 +49,10 @@ Status: `in_progress`
   - [x] Sub-task: Write CLI tests for `-v`, `--version`, `version` output (Red)
   - [x] Sub-task: Implement `cmd/root.go` and `main.go` with `-ldflags` variables (Green)
   - [x] Sub-task: Refactor & verify test coverage >80% (Refactor)
-- [ ] Task 3.2: Self-Update CLI Subcommand
-  - [ ] Sub-task: Write CLI tests for `bender update` and `--force` flags (Red)
-  - [ ] Sub-task: Implement `cmd/update.go` delegating to `pkg/updater` (Green)
-  - [ ] Sub-task: Refactor & verify test coverage >80% (Refactor)
+- [x] Task 3.2: Self-Update CLI Subcommand (273b641)
+  - [x] Sub-task: Write CLI tests for `bender update` and `--force` flags (Red)
+  - [x] Sub-task: Implement `cmd/update.go` delegating to `pkg/updater` (Green)
+  - [x] Sub-task: Refactor & verify test coverage >80% (Refactor)
 - [ ] Task 3.3: MCP CLI Subcommands
   - [ ] Sub-task: Write CLI tests for `bender mcp` stdio server and `bender mcp install` (Red)
   - [ ] Sub-task: Implement `cmd/mcp.go` delegating to `pkg/mcp` (Green)
