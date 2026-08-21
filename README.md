@@ -22,7 +22,8 @@ It encapsulates standardized CLI ergonomics, zero-prompt multi-tier installers, 
   - Built-in `bender update`, `bender mcp`, `bender mcp install`, and sample `bender hello` commands.
 - **Progressive 3-Tier Installer & CI/CD Automation**:
   - Zero-prompt `install.sh` supporting Tier 1 (local Go compilation), Tier 2 (prebuilt binary release download), and Tier 3 (fallback).
-  - GitHub Actions matrix releasing 5 platform binaries (`darwin-aarch64`, `darwin-x86_64`, `linux-aarch64`, `linux-x86_64`, `windows-x86_64.exe`).
+  - Automated SemVer release tagging (`v${VERSION}`) on push/merge to `main` with idempotent remote tag discovery.
+  - GitHub Actions matrix releasing 5 platform binaries (`darwin-aarch64`, `darwin-x86_64`, `linux-aarch64`, `linux-x86_64`, `windows-x86_64.exe`) under both semantic version tags and `latest`.
 
 ---
 
@@ -43,6 +44,14 @@ The installer will:
 2. Compile and install locally if Go 1.22+ is available, or download the latest prebuilt release binary from GitHub Releases.
 3. Automatically strip macOS quarantine attributes and apply code signing on Darwin.
 4. Register the `bender` binary globally into `/usr/local/bin` or `~/.local/bin`.
+
+### Go Module Dependency
+
+To import `bender` packages (`pkg/updater`, `pkg/mcp`) in downstream Go projects:
+
+```bash
+go get github.com/twoBoots/bender@v1.0.0
+```
 
 ---
 
