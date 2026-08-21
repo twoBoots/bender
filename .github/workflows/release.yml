@@ -1,0 +1,103 @@
+name: Release Binary
+
+on:
+  push:
+    branches:
+      - main
+    tags:
+      - "v*"
+
+permissions:
+  contents: write
+
+jobs:
+  ci:
+    uses: ./.github/workflows/ci.yml
+
+  build-and-release:
+    needs: ci
+    runs-on: ubuntu-latest
+    strategy:
+      matrix:
+        include:
+          - goos: linux
+            goarch: amd64
+            binary: bender-linux-x86_64
+          - goos: linux
+            goarch: arm64
+            binary: bender-linux-aarch64
+          - goos: darwin
+            goarch: amd64
+            binary: bender-darwin-x86_64
+          - goos: darwin
+            goarch: arm64
+            binary: bender-darwin-aarch64
+          - goos: windows
+            goarch: amd64
+            binary: bender-windows-x86_64.exe
+
+    steps:
+      - name: Checkout repository
+        uses: actions/checkout@v4
+
+      - name: Setup Go
+        uses: actions/setup-go@v5
+        with:
+          go-version: "1.22"
+          cache: true
+
+      - name: Compile Go Binary (${{ matrix.goos }}/${{ matrix.goarch }})
+        env:
+          CGO_ENABLED: 0
+          GOOS: ${{ matrix.goos }}
+          GOARCH: ${{ matrix.goarch }}
+        run: |
+          mkdir -p dist
+          VERSION=$(grep -E '^\s*Version\s*=' cmd/root.go | head -n 1 | sed -E 's/.*"([^"]+)".*/\1/')
+          if [ -z "$VERSION" ]; then
+            VERSION="1.0.0"
+          fi
+          if [ "$GITHUB_REF_TYPE" = "tag" ]; then
+            VERSION="${GITHUB_REF_NAME#v}"
+          fi
+          COMMIT="${GITHUB_SHA::7}"
+          BUILD_DATE=$(date -u +%Y-%m-%d)
+          echo "Building Bender version: ${VERSION} (${COMMIT})"
+          go build -ldflags="-s -w -X github.com/twoBoots/bender/cmd.Version=${VERSION} -X github.com/twoBoots/bender/cmd.Commit=${COMMIT} -X github.com/twoBoots/bender/cmd.BuildDate=${BUILD_DATE}" -o dist/${{ matrix.binary }} .
+
+      - name: Upload Build Artifact
+        uses: actions/upload-artifact@v4
+        with:
+          name: ${{ matrix.binary }}
+          path: dist/${{ matrix.binary }}
+
+  publish-release:
+    needs: build-and-release
+    runs-on: ubuntu-latest
+    steps:
+      - name: Checkout repository
+        uses: actions/checkout@v4
+
+      - name: Download all artifacts
+        uses: actions/download-artifact@v4
+        with:
+          path: release-assets
+          merge-multiple: true
+
+      - name: Create or Update GitHub Release
+        env:
+          GITHUB_TOKEN: ${{ secrets.GITHUB_TOKEN }}
+        run: |
+          TAG="${GITHUB_REF_NAME}"
+          if [ "$GITHUB_REF_TYPE" != "tag" ]; then
+            TAG="latest"
+          fi
+          
+          echo "Publishing release assets for tag: $TAG"
+          if gh release view "$TAG" >/dev/null 2>&1; then
+            echo "Release for $TAG exists. Updating release assets..."
+            gh release upload "$TAG" release-assets/* --clobber
+          else
+            echo "Release for $TAG does not exist. Creating release with assets..."
+            gh release create "$TAG" release-assets/* --title "Bender $TAG" --notes "Automated Go binary release for Bender"
+          fi
