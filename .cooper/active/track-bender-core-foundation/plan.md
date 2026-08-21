@@ -9,10 +9,10 @@ Status: `in_progress`
   - [x] Sub-task: Write unit tests for Semver parsing, cleaning, and comparison (Red)
   - [x] Sub-task: Implement `pkg/updater/semver.go` (Green)
   - [x] Sub-task: Refactor & verify test coverage >80% (Refactor)
-- [ ] Task 1.2: Platform & Architecture Asset Resolution
-  - [ ] Sub-task: Write unit tests for OS/Arch mapping across Darwin, Linux, Windows (Red)
-  - [ ] Sub-task: Implement `pkg/updater/platform.go` (Green)
-  - [ ] Sub-task: Refactor & verify test coverage >80% (Refactor)
+- [x] Task 1.2: Platform & Architecture Asset Resolution (24f58b4)
+  - [x] Sub-task: Write unit tests for OS/Arch mapping across Darwin, Linux, Windows (Red)
+  - [x] Sub-task: Implement `pkg/updater/platform.go` (Green)
+  - [x] Sub-task: Refactor & verify test coverage >80% (Refactor)
 - [ ] Task 1.3: GitHub Releases API Client
   - [ ] Sub-task: Write HTTP mock tests for `FetchLatestRelease` and `FetchReleaseByTag` (Red)
   - [ ] Sub-task: Implement `pkg/updater/client.go` with zero external dependencies (Green)
