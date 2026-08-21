@@ -8,6 +8,9 @@ bin/
 # Test coverage
 coverage.out
 
+# Ephemeral PR and review files
+prbody.md
+
 # Local overrides
 *.local
 .batteryrc.local
