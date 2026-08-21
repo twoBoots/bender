@@ -12,3 +12,8 @@ All active and completed Cooper tracks are registered below.
   - Status: Completed (Archived)
   - Link: [.cooper/archive/track-auto-release-tagging/index.md](.cooper/archive/track-auto-release-tagging/index.md)
 
+- [ ] **Track: Prevent Node Deprecation Warnings in CI/CD Workflows**
+  - Worktree: `.worktrees/prevent-node-deprecations-ci`
+  - Link: [.cooper/active/prevent-node-deprecations-ci/index.md](.cooper/active/prevent-node-deprecations-ci/index.md)
+
+
