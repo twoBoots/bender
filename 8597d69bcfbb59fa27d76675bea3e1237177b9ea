@@ -1,0 +1,3 @@
+Task: Update .github/workflows/release.yml with automated tag checking & pushing
+Scope: .github/workflows/release.yml, cmd/root_test.go
+Summary: Added auto-tag job on push to main to check for semantic version tag v${VERSION} on origin and push if missing. Updated publish-release job to upload assets under both semantic tag v${VERSION} and latest. Added unit test verifying SemVer format of default root command Version.
