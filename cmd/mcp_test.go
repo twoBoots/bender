@@ -53,6 +53,10 @@ func TestMCPInstallCmd(t *testing.T) {
 	_ = os.MkdirAll(homeDir, 0755)
 
 	t.Setenv("HOME", homeDir)
+	defer func() {
+		_ = os.RemoveAll(".cursor")
+		_ = os.RemoveAll(".vscode")
+	}()
 
 	var out bytes.Buffer
 	cmd.RootCmd.SetOut(&out)
