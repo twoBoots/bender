@@ -67,9 +67,9 @@ Status: `in_progress`
 
 ## Phase 4: Packaging, Automation & Final Validation
 
-- [ ] Task 4.1: Parameterized 3-Tier `install.sh`
-  - [ ] Sub-task: Write shell validation tests for Tier 1 (local build), Tier 2 (release download), Tier 3 (fallback)
-  - [ ] Sub-task: Implement and chmod `install.sh`
+- [x] Task 4.1: Parameterized 3-Tier `install.sh` (f4bca45)
+  - [x] Sub-task: Write shell validation tests for Tier 1 (local build), Tier 2 (release download), Tier 3 (fallback)
+  - [x] Sub-task: Implement and chmod `install.sh`
 - [ ] Task 4.2: CI & Multi-Arch Release GitHub Workflows
   - [ ] Sub-task: Implement `.github/workflows/ci.yml` (test, race, lint, coverage)
   - [ ] Sub-task: Implement `.github/workflows/release.yml` (5-target matrix: linux/amd64, linux/arm64, darwin/amd64, darwin/arm64, windows/amd64)
