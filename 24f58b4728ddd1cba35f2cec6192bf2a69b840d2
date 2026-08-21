@@ -1,0 +1,3 @@
+Task: Task 1.2 - Platform & Architecture Asset Resolution
+Scope: pkg/updater/platform.go, pkg/updater/platform_test.go
+Summary: Implemented generic OS/Arch binary asset name resolution with 100% test coverage
