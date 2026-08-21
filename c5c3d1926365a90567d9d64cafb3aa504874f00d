@@ -1,0 +1,3 @@
+Task: Task 1.1 - Semantic Versioning Parser & Comparator
+Scope: pkg/updater/semver.go, pkg/updater/semver_test.go
+Summary: Implemented Semver normalization and comparison logic with 100% test coverage
