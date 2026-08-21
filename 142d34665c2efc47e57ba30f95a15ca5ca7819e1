@@ -1,0 +1,3 @@
+Task: Task 2.2 - Stdio MCP Server & Dynamic Dispatcher
+Scope: pkg/mcp/server.go, pkg/mcp/server_test.go
+Summary: Implemented generic stdio MCP server with tools, resources, and prompts dispatching (87.7% coverage)
