@@ -53,10 +53,10 @@ Status: `in_progress`
   - [x] Sub-task: Write CLI tests for `bender update` and `--force` flags (Red)
   - [x] Sub-task: Implement `cmd/update.go` delegating to `pkg/updater` (Green)
   - [x] Sub-task: Refactor & verify test coverage >80% (Refactor)
-- [ ] Task 3.3: MCP CLI Subcommands
-  - [ ] Sub-task: Write CLI tests for `bender mcp` stdio server and `bender mcp install` (Red)
-  - [ ] Sub-task: Implement `cmd/mcp.go` delegating to `pkg/mcp` (Green)
-  - [ ] Sub-task: Refactor & verify test coverage >80% (Refactor)
+- [x] Task 3.3: MCP CLI Subcommands (e16332e)
+  - [x] Sub-task: Write CLI tests for `bender mcp` stdio server and `bender mcp install` (Red)
+  - [x] Sub-task: Implement `cmd/mcp.go` delegating to `pkg/mcp` (Green)
+  - [x] Sub-task: Refactor & verify test coverage >80% (Refactor)
 - [ ] Task 3.4: Example / Extensibility Subcommand
   - [ ] Sub-task: Write CLI test for template subcommand demonstrating consumer extension (Red)
   - [ ] Sub-task: Implement `cmd/example.go` (Green)
