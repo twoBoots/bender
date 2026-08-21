@@ -57,10 +57,10 @@ Status: `in_progress`
   - [x] Sub-task: Write CLI tests for `bender mcp` stdio server and `bender mcp install` (Red)
   - [x] Sub-task: Implement `cmd/mcp.go` delegating to `pkg/mcp` (Green)
   - [x] Sub-task: Refactor & verify test coverage >80% (Refactor)
-- [ ] Task 3.4: Example / Extensibility Subcommand
-  - [ ] Sub-task: Write CLI test for template subcommand demonstrating consumer extension (Red)
-  - [ ] Sub-task: Implement `cmd/example.go` (Green)
-  - [ ] Sub-task: Refactor & verify test coverage >80% (Refactor)
+- [x] Task 3.4: Example / Extensibility Subcommand (92eac65)
+  - [x] Sub-task: Write CLI test for template subcommand demonstrating consumer extension (Red)
+  - [x] Sub-task: Implement `cmd/example.go` (Green)
+  - [x] Sub-task: Refactor & verify test coverage >80% (Refactor)
 - [ ] Task 3.5: Phase 3 Verification & Checkpoint
   - [ ] Sub-task: Run all CLI suite tests and verify coverage >80%
   - [ ] Sub-task: Synchronize upstream rules (`git fetch origin main`) and record checkpoint
