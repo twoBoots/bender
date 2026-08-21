@@ -21,9 +21,9 @@ Status: `in_progress`
   - [x] Sub-task: Write unit tests for atomic swap, temp file generation, and rollback (Red)
   - [x] Sub-task: Implement `pkg/updater/updater.go` with macOS quarantine stripping & codesign (Green)
   - [x] Sub-task: Refactor & verify test coverage >80% (Refactor)
-- [ ] Task 1.5: Phase 1 Verification & Checkpoint
-  - [ ] Sub-task: Run all package tests with `-race` and verify coverage >80%
-  - [ ] Sub-task: Synchronize upstream rules (`git fetch origin main`) and record checkpoint
+- [x] Task 1.5: Phase 1 Verification & Checkpoint [checkpoint: 42132d5]
+  - [x] Sub-task: Run all package tests with `-race` and verify coverage >80%
+  - [x] Sub-task: Synchronize upstream rules (`git fetch origin main`) and record checkpoint
 
 ## Phase 2: Generic MCP Server Engine (`pkg/mcp`)
 
