@@ -1,0 +1,3 @@
+Task: Task 2.1 - JSON-RPC 2.0 Protocol Models & Serialization
+Scope: pkg/mcp/protocol.go, pkg/mcp/protocol_test.go
+Summary: Implemented standard MCP / JSON-RPC 2.0 types and serialization helpers with 100% test coverage
