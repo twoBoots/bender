@@ -5,10 +5,10 @@ Status: `in_progress`
 
 ## Phase 1: Generic Self-Updater Engine (`pkg/updater`)
 
-- [ ] Task 1.1: Semantic Versioning Parser & Comparator
-  - [ ] Sub-task: Write unit tests for Semver parsing, cleaning, and comparison (Red)
-  - [ ] Sub-task: Implement `pkg/updater/semver.go` (Green)
-  - [ ] Sub-task: Refactor & verify test coverage >80% (Refactor)
+- [x] Task 1.1: Semantic Versioning Parser & Comparator (c5c3d19)
+  - [x] Sub-task: Write unit tests for Semver parsing, cleaning, and comparison (Red)
+  - [x] Sub-task: Implement `pkg/updater/semver.go` (Green)
+  - [x] Sub-task: Refactor & verify test coverage >80% (Refactor)
 - [ ] Task 1.2: Platform & Architecture Asset Resolution
   - [ ] Sub-task: Write unit tests for OS/Arch mapping across Darwin, Linux, Windows (Red)
   - [ ] Sub-task: Implement `pkg/updater/platform.go` (Green)
