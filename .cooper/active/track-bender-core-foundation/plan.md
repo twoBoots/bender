@@ -27,10 +27,10 @@ Status: `in_progress`
 
 ## Phase 2: Generic MCP Server Engine (`pkg/mcp`)
 
-- [ ] Task 2.1: JSON-RPC 2.0 Protocol Models & Serialization
-  - [ ] Sub-task: Write tests for JSON-RPC 2.0 request/response/error marshaling (Red)
-  - [ ] Sub-task: Implement `pkg/mcp/protocol.go` and MCP protocol types (Green)
-  - [ ] Sub-task: Refactor & verify test coverage >80% (Refactor)
+- [x] Task 2.1: JSON-RPC 2.0 Protocol Models & Serialization (cb0603e)
+  - [x] Sub-task: Write tests for JSON-RPC 2.0 request/response/error marshaling (Red)
+  - [x] Sub-task: Implement `pkg/mcp/protocol.go` and MCP protocol types (Green)
+  - [x] Sub-task: Refactor & verify test coverage >80% (Refactor)
 - [ ] Task 2.2: Stdio MCP Server & Dynamic Dispatcher
   - [ ] Sub-task: Write tests for `initialize`, `tools/list`, `tools/call`, `resources/*`, `prompts/*` (Red)
   - [ ] Sub-task: Implement `pkg/mcp/server.go` and handler registration (Green)
