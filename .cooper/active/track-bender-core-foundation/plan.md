@@ -39,9 +39,9 @@ Status: `in_progress`
   - [x] Sub-task: Write tests for merging config into Cursor, Claude Desktop, Antigravity JSON (Red)
   - [x] Sub-task: Implement `pkg/mcp/installer.go` with path discovery and atomic JSON merging (Green)
   - [x] Sub-task: Refactor & verify test coverage >80% (Refactor)
-- [ ] Task 2.4: Phase 2 Verification & Checkpoint
-  - [ ] Sub-task: Run all package tests with `-race` and verify coverage >80%
-  - [ ] Sub-task: Synchronize upstream rules (`git fetch origin main`) and record checkpoint
+- [x] Task 2.4: Phase 2 Verification & Checkpoint [checkpoint: 087ae8d]
+  - [x] Sub-task: Run all package tests with `-race` and verify coverage >80%
+  - [x] Sub-task: Synchronize upstream rules (`git fetch origin main`) and record checkpoint
 
 ## Phase 3: Cobra CLI Interface & Commands (`cmd/` & `main.go`)
 
