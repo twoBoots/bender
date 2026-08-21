@@ -1,0 +1,3 @@
+Task: Task 3.4 - Example / Extensibility Subcommand
+Scope: cmd/example.go, cmd/example_test.go, cmd/mcp_test.go
+Summary: Implemented sample 'bender hello' command demonstrating consumer extensibility (86.7% coverage on cmd)
