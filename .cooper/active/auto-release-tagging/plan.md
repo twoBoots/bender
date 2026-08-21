@@ -1,7 +1,7 @@
 # Implementation Plan: Automated Git Release Tagging
 
 ## Phase 1: Workflow Enhancement & Auto-Tagging
-- [ ] Task 1: Update `.github/workflows/release.yml` with automated tag checking & pushing
+- [~] Task 1: Update `.github/workflows/release.yml` with automated tag checking & pushing
   - [ ] Sub-task: Add auto-tagging step detecting `Version` from `cmd/root.go`
   - [ ] Sub-task: Add tag existence check and push via `GITHUB_TOKEN`
   - [ ] Sub-task: Update `publish-release` to tag release with `v${VERSION}` and alias `latest`
