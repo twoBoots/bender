@@ -65,22 +65,16 @@ func NewServer(name, version, cwd string) *Server {
 
 // Name returns the server name.
 func (s *Server) Name() string {
-	s.mu.RLock()
-	defer s.mu.RUnlock()
 	return s.name
 }
 
 // Version returns the server version.
 func (s *Server) Version() string {
-	s.mu.RLock()
-	defer s.mu.RUnlock()
 	return s.version
 }
 
 // Cwd returns the server working directory.
 func (s *Server) Cwd() string {
-	s.mu.RLock()
-	defer s.mu.RUnlock()
 	return s.cwd
 }
 
@@ -107,12 +101,11 @@ func (s *Server) RegisterPrompt(prompt Prompt, handler PromptHandler) {
 
 // HandleRequest processes an individual JSON-RPC request.
 func (s *Server) HandleRequest(ctx context.Context, req Request) Response {
-	s.mu.Lock()
-	defer s.mu.Unlock()
-
 	switch req.Method {
 	case "initialize":
+		s.mu.Lock()
 		s.initialized = true
+		s.mu.Unlock()
 		return NewResponse(req.ID, InitializeResult{
 			ProtocolVersion: LatestProtocolVersion,
 			ServerInfo: Implementation{
@@ -134,10 +127,12 @@ func (s *Server) HandleRequest(ctx context.Context, req Request) Response {
 		return NewResponse(req.ID, map[string]interface{}{})
 
 	case "tools/list":
+		s.mu.RLock()
 		toolsList := make([]Tool, 0, len(s.tools))
 		for _, entry := range s.tools {
 			toolsList = append(toolsList, entry.tool)
 		}
+		s.mu.RUnlock()
 		return NewResponse(req.ID, ListToolsResult{Tools: toolsList})
 
 	case "tools/call":
@@ -147,7 +142,9 @@ func (s *Server) HandleRequest(ctx context.Context, req Request) Response {
 				return NewErrorResponse(req.ID, InvalidParamsCode, fmt.Sprintf("invalid tool params: %v", err), nil)
 			}
 		}
+		s.mu.RLock()
 		entry, exists := s.tools[params.Name]
+		s.mu.RUnlock()
 		if !exists {
 			return NewErrorResponse(req.ID, MethodNotFoundCode, fmt.Sprintf("unknown tool: %s", params.Name), nil)
 		}
@@ -158,10 +155,12 @@ func (s *Server) HandleRequest(ctx context.Context, req Request) Response {
 		return NewResponse(req.ID, res)
 
 	case "resources/list":
+		s.mu.RLock()
 		resList := make([]Resource, 0, len(s.resources))
 		for _, entry := range s.resources {
 			resList = append(resList, entry.resource)
 		}
+		s.mu.RUnlock()
 		return NewResponse(req.ID, ListResourcesResult{Resources: resList})
 
 	case "resources/read":
@@ -171,6 +170,7 @@ func (s *Server) HandleRequest(ctx context.Context, req Request) Response {
 				return NewErrorResponse(req.ID, InvalidParamsCode, fmt.Sprintf("invalid resource params: %v", err), nil)
 			}
 		}
+		s.mu.RLock()
 		entry, exists := s.resources[params.URI]
 		if !exists {
 			for pattern, rEntry := range s.resources {
@@ -181,6 +181,7 @@ func (s *Server) HandleRequest(ctx context.Context, req Request) Response {
 				}
 			}
 		}
+		s.mu.RUnlock()
 		if !exists {
 			return NewErrorResponse(req.ID, MethodNotFoundCode, fmt.Sprintf("resource not found: %s", params.URI), nil)
 		}
@@ -191,10 +192,12 @@ func (s *Server) HandleRequest(ctx context.Context, req Request) Response {
 		return NewResponse(req.ID, res)
 
 	case "prompts/list":
+		s.mu.RLock()
 		pList := make([]Prompt, 0, len(s.prompts))
 		for _, entry := range s.prompts {
 			pList = append(pList, entry.prompt)
 		}
+		s.mu.RUnlock()
 		return NewResponse(req.ID, ListPromptsResult{Prompts: pList})
 
 	case "prompts/get":
@@ -204,7 +207,9 @@ func (s *Server) HandleRequest(ctx context.Context, req Request) Response {
 				return NewErrorResponse(req.ID, InvalidParamsCode, fmt.Sprintf("invalid prompt params: %v", err), nil)
 			}
 		}
+		s.mu.RLock()
 		entry, exists := s.prompts[params.Name]
+		s.mu.RUnlock()
 		if !exists {
 			return NewErrorResponse(req.ID, MethodNotFoundCode, fmt.Sprintf("prompt not found: %s", params.Name), nil)
 		}
