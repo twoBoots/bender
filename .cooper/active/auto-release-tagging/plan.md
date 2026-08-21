@@ -8,6 +8,6 @@
 - [x] Task 2: Documentation & Initial Tag (678ccb7)
   - [x] Sub-task: Update `README.md` with release workflow documentation
   - [x] Sub-task: Tag baseline `v1.0.0`
-- [ ] Task 3: Phase 1 Verification & Checkpoint
-  - [ ] Sub-task: Run local tests `go test -v ./...`
-  - [ ] Sub-task: Record Git Notes checkpoint summary
+- [x] Task 3: Phase 1 Verification & Checkpoint
+  - [x] Sub-task: Run local tests `go test -v ./...`
+  - [x] Sub-task: Record Git Notes checkpoint summary
