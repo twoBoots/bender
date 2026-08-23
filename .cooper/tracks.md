@@ -4,8 +4,8 @@ All active and completed Cooper tracks are registered below.
 
 
 - [x] **Track: Bump Go Runtime to 1.27.0**
-  - Worktree: `.worktrees/bump-go-1-27-0`
-  - Link: [.cooper/active/bump-go-1-27-0/index.md](.cooper/active/bump-go-1-27-0/index.md)
+  - Status: Completed (Archived)
+  - Link: [.cooper/archive/track-bump-go-1-27-0/index.md](.cooper/archive/track-bump-go-1-27-0/index.md)
 
 - [x] **Track: Bender MCP Version Fallback Cleanup**
   - Status: Completed (Archived)
