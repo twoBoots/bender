@@ -28,5 +28,5 @@ All active and completed Cooper tracks are registered below.
   - Link: [.cooper/archive/track-auto-release-tagging/index.md](.cooper/archive/track-auto-release-tagging/index.md)
 
 - [x] **Track: Standardize SemVer Comparison Using golang.org/x/mod/semver**
-  - Worktree: `.worktrees/standardize-semver-xmod`
-  - Link: [.cooper/active/standardize-semver-xmod/index.md](.cooper/active/standardize-semver-xmod/index.md)
+  - Status: Completed (Archived)
+  - Link: [.cooper/archive/track-standardize-semver-xmod/index.md](.cooper/archive/track-standardize-semver-xmod/index.md)
