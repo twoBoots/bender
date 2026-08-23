@@ -1,0 +1,11 @@
+{
+  "track_id": "bender-mcp-version-fallback",
+  "name": "Bender MCP Version Fallback Cleanup",
+  "status": "new",
+  "created_at": "2026-08-23T03:58:38.182539Z",
+  "updated_at": "2026-08-23T04:07:00.000000Z",
+  "type": "fix",
+  "capabilities": [
+    "mcp"
+  ]
+}
