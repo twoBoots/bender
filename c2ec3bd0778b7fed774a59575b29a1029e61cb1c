@@ -1,0 +1,3 @@
+Task: Implement Fallback & Normalization in pkg/mcp/server.go (Green & Refactor)
+Scope: pkg/mcp/server.go
+Summary: Updated NewServer constructor to default empty or whitespace version strings to 'dev' without prepending 'v', while continuing to normalize semantic versions (e.g. '1.0.0' -> 'v1.0.0').
