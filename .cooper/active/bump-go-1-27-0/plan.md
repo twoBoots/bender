@@ -8,7 +8,7 @@
 - [x] Task: Update GitHub Actions Workflows (d123678)
   - [x] Sub-task: Update `ci.yml` to use `go-version: "1.27.0"`
   - [x] Sub-task: Update `release.yml` to use `go-version: "1.27.0"`
-- [ ] Task: Update Installer Script & Documentation
+- [~] Task: Update Installer Script & Documentation
   - [ ] Sub-task: Update `install.sh` Tier 3 fallback message to reference Go 1.27.0+
   - [ ] Sub-task: Update `README.md` and `.cooper/definition/tech-stack.md`
 - [ ] Task: Phase 1 Verification & Checkpoint
