@@ -46,6 +46,91 @@ func TestServer_Initialize(t *testing.T) {
 	}
 }
 
+func TestServer_VersionFallbackAndNormalization(t *testing.T) {
+	tests := []struct {
+		name            string
+		inputName       string
+		inputVersion    string
+		expectedName    string
+		expectedVersion string
+	}{
+		{
+			name:            "empty version defaults to dev",
+			inputName:       "test-srv",
+			inputVersion:    "",
+			expectedName:    "test-srv",
+			expectedVersion: "dev",
+		},
+		{
+			name:            "whitespace version defaults to dev",
+			inputName:       "test-srv",
+			inputVersion:    "   \t\n",
+			expectedName:    "test-srv",
+			expectedVersion: "dev",
+		},
+		{
+			name:            "explicit dev version stays dev",
+			inputName:       "test-srv",
+			inputVersion:    "dev",
+			expectedName:    "test-srv",
+			expectedVersion: "dev",
+		},
+		{
+			name:            "semantic version gets v prefix",
+			inputName:       "test-srv",
+			inputVersion:    "1.2.3",
+			expectedName:    "test-srv",
+			expectedVersion: "v1.2.3",
+		},
+		{
+			name:            "prefixed semantic version is preserved",
+			inputName:       "test-srv",
+			inputVersion:    "v2.0.0",
+			expectedName:    "test-srv",
+			expectedVersion: "v2.0.0",
+		},
+		{
+			name:            "empty name defaults to bender-mcp",
+			inputName:       "",
+			inputVersion:    "",
+			expectedName:    "bender-mcp",
+			expectedVersion: "dev",
+		},
+	}
+
+	for _, tc := range tests {
+		t.Run(tc.name, func(t *testing.T) {
+			srv := mcp.NewServer(tc.inputName, tc.inputVersion, "/test/cwd")
+			if srv.Name() != tc.expectedName {
+				t.Errorf("srv.Name() = %q; want %q", srv.Name(), tc.expectedName)
+			}
+			if srv.Version() != tc.expectedVersion {
+				t.Errorf("srv.Version() = %q; want %q", srv.Version(), tc.expectedVersion)
+			}
+
+			id := json.RawMessage(`1`)
+			resp := srv.HandleRequest(context.Background(), mcp.Request{
+				JSONRPC: "2.0",
+				ID:      &id,
+				Method:  "initialize",
+			})
+			if resp.Error != nil {
+				t.Fatalf("HandleRequest initialize error: %v", resp.Error)
+			}
+			initRes, ok := resp.Result.(mcp.InitializeResult)
+			if !ok {
+				t.Fatalf("expected InitializeResult, got %T", resp.Result)
+			}
+			if initRes.ServerInfo.Version != tc.expectedVersion {
+				t.Errorf("initRes.ServerInfo.Version = %q; want %q", initRes.ServerInfo.Version, tc.expectedVersion)
+			}
+			if initRes.ServerInfo.Name != tc.expectedName {
+				t.Errorf("initRes.ServerInfo.Name = %q; want %q", initRes.ServerInfo.Name, tc.expectedName)
+			}
+		})
+	}
+}
+
 func TestServer_ToolsLifecycle(t *testing.T) {
 	srv := mcp.NewServer("test-mcp", "0.1.0", "/cwd")
 
