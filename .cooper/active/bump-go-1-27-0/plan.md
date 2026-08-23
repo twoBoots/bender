@@ -5,7 +5,7 @@
 - [x] Task: Update Go Module Runtime Directive (a86393f)
   - [x] Sub-task: Update `go.mod` to declare `go 1.27.0`
   - [x] Sub-task: Verify `go.mod` and `go.sum` consistency
-- [ ] Task: Update GitHub Actions Workflows
+- [~] Task: Update GitHub Actions Workflows
   - [ ] Sub-task: Update `ci.yml` to use `go-version: "1.27.0"`
   - [ ] Sub-task: Update `release.yml` to use `go-version: "1.27.0"`
 - [ ] Task: Update Installer Script & Documentation
