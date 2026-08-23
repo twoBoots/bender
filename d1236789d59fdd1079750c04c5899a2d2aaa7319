@@ -1,0 +1,3 @@
+Task: Update GitHub Actions Workflows
+Scope: .github/workflows/ci.yml, .github/workflows/release.yml
+Summary: Updated setup-go go-version parameter to 1.27.0
