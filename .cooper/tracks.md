@@ -5,8 +5,8 @@ All active and completed Cooper tracks are registered below.
 ---
 
 - [x] **Track: Bender MCP Version Fallback Cleanup**
-  - Worktree: `.worktrees/bender-mcp-version-fallback`
-  - Link: [.cooper/active/bender-mcp-version-fallback/index.md](.cooper/active/bender-mcp-version-fallback/index.md)
+  - Status: Completed (Archived)
+  - Link: [.cooper/archive/track-bender-mcp-version-fallback/index.md](.cooper/archive/track-bender-mcp-version-fallback/index.md)
 
 - [x] **Track: Prevent Node Deprecation Warnings in CI/CD Workflows**
   - Worktree: `.worktrees/prevent-node-deprecations-ci`
