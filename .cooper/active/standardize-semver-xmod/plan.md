@@ -7,6 +7,6 @@
   - [x] Sub-task: Expand unit tests in `pkg/updater/semver_test.go` covering SemVer 2.0 edge cases and dev builds (Red)
   - [x] Sub-task: Implement `pkg/updater/semver.go` using `golang.org/x/mod/semver` (Green)
   - [x] Sub-task: Refactor, verify linting, and ensure >80% test coverage (Refactor)
-- [ ] Task: Phase 1 Verification & Checkpoint
-  - [ ] Sub-task: Run full test suite (`go test -race ./...`)
-  - [ ] Sub-task: Commit phase checkpoint and sync notes
+- [x] Task: Phase 1 Verification & Checkpoint
+  - [x] Sub-task: Run full test suite (`go test -race ./...`)
+  - [x] Sub-task: Commit phase checkpoint and sync notes
