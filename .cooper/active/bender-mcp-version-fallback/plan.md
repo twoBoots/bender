@@ -2,7 +2,7 @@
 
 ## Phase 1: MCP Server Version Fallback & Normalization
 
-- [ ] Task 1: Add Unit Tests for Version Fallback & Normalization (Red)
+- [~] Task 1: Add Unit Tests for Version Fallback & Normalization (Red)
   - [ ] Sub-task: Write unit tests in `pkg/mcp/server_test.go` for default fallback to `"dev"` on empty string
   - [ ] Sub-task: Write unit tests for whitespace-only version fallback to `"dev"`
   - [ ] Sub-task: Write unit tests for explicit `"dev"` version preserving `"dev"` without `v` prefix
