@@ -1,0 +1,7 @@
+{
+  "track_id": "standardize-semver-xmod",
+  "title": "Standardize SemVer Comparison Using golang.org/x/mod/semver",
+  "status": "completed",
+  "created_at": "2026-08-23T09:23:00Z",
+  "capabilities": ["updater"]
+}

@@ -1,8 +1,9 @@
 package updater
 
 import (
-	"strconv"
 	"strings"
+
+	"golang.org/x/mod/semver"
 )
 
 // NormalizeVersion trims leading 'v' or 'V' and whitespace.
@@ -13,7 +14,50 @@ func NormalizeVersion(v string) string {
 	return v
 }
 
+// toCanonicalSemver converts a version string to a valid format for x/mod/semver (prefixed with 'v').
+// It expands partial versions (e.g. "0.1" -> "v0.1.0") to adhere to full SemVer 2.0.0.
+func toCanonicalSemver(v string) string {
+	v = strings.TrimSpace(v)
+	if v == "" {
+		return ""
+	}
+	if strings.HasPrefix(v, "v") || strings.HasPrefix(v, "V") {
+		v = "v" + v[1:]
+	} else {
+		v = "v" + v
+	}
+
+	if semver.IsValid(v) {
+		return v
+	}
+
+	// Expand partial versions like "v0.1" or "v1"
+	parts := strings.SplitN(v, "-", 2)
+	dots := strings.Split(parts[0], ".")
+	if len(dots) == 2 {
+		expanded := dots[0] + "." + dots[1] + ".0"
+		if len(parts) > 1 {
+			expanded += "-" + parts[1]
+		}
+		if semver.IsValid(expanded) {
+			return expanded
+		}
+	} else if len(dots) == 1 {
+		expanded := dots[0] + ".0.0"
+		if len(parts) > 1 {
+			expanded += "-" + parts[1]
+		}
+		if semver.IsValid(expanded) {
+			return expanded
+		}
+	}
+
+	return v
+}
+
 // CompareVersions compares two semver strings (e.g. "1.2.0" and "1.3.0").
+// It adheres to Semantic Versioning 2.0.0 via golang.org/x/mod/semver, while
+// supporting development tags ("dev") and partial/unprefixed versions.
 // Returns -1 if v1 < v2, 0 if v1 == v2, 1 if v1 > v2.
 func CompareVersions(v1, v2 string) int {
 	norm1 := NormalizeVersion(v1)
@@ -31,48 +75,25 @@ func CompareVersions(v1, v2 string) int {
 		return 1
 	}
 
-	// Split prerelease tag (e.g. 1.0.0-rc1)
-	parts1 := strings.SplitN(norm1, "-", 2)
-	parts2 := strings.SplitN(norm2, "-", 2)
+	sv1 := toCanonicalSemver(v1)
+	sv2 := toCanonicalSemver(v2)
 
-	nums1 := strings.Split(parts1[0], ".")
-	nums2 := strings.Split(parts2[0], ".")
+	valid1 := semver.IsValid(sv1)
+	valid2 := semver.IsValid(sv2)
 
-	maxLen := len(nums1)
-	if len(nums2) > maxLen {
-		maxLen = len(nums2)
+	if valid1 && valid2 {
+		return semver.Compare(sv1, sv2)
 	}
 
-	for i := 0; i < maxLen; i++ {
-		var n1, n2 int
-		if i < len(nums1) {
-			n1, _ = strconv.Atoi(nums1[i])
-		}
-		if i < len(nums2) {
-			n2, _ = strconv.Atoi(nums2[i])
-		}
-		if n1 < n2 {
-			return -1
-		}
-		if n1 > n2 {
-			return 1
-		}
-	}
-
-	// Check prereleases: normal release has higher precedence than prerelease (1.0.0 > 1.0.0-rc1)
-	if len(parts1) > 1 && len(parts2) == 1 {
-		return -1
-	}
-	if len(parts1) == 1 && len(parts2) > 1 {
+	if valid1 && !valid2 {
 		return 1
 	}
-	if len(parts1) > 1 && len(parts2) > 1 {
-		if parts1[1] < parts2[1] {
-			return -1
-		} else if parts1[1] > parts2[1] {
-			return 1
-		}
+	if !valid1 && valid2 {
+		return -1
 	}
 
-	return 0
+	if norm1 < norm2 {
+		return -1
+	}
+	return 1
 }
