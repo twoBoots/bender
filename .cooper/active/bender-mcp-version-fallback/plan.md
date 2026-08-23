@@ -9,12 +9,12 @@
   - [x] Sub-task: Write unit tests for explicit semantic version (e.g. `"1.0.0"`) normalizing to `"v1.0.0"`
   - [x] Sub-task: Confirm tests fail against existing hardcoded `"1.0.0"` implementation (Red)
 
-- [~] Task 2: Implement Fallback & Normalization in `pkg/mcp/server.go` (Green & Refactor)
-  - [ ] Sub-task: Update `NewServer` constructor logic to default empty/whitespace to `"dev"` and skip `"v"` prefix for `"dev"`
-  - [ ] Sub-task: Run unit tests to verify all test cases pass (Green)
-  - [ ] Sub-task: Run linter/formatting checks and ensure test coverage >80% (Refactor)
+- [x] Task 2: Implement Fallback & Normalization in `pkg/mcp/server.go` (Green & Refactor) (c2ec3bd)
+  - [x] Sub-task: Update `NewServer` constructor logic to default empty/whitespace to `"dev"` and skip `"v"` prefix for `"dev"`
+  - [x] Sub-task: Run unit tests to verify all test cases pass (Green)
+  - [x] Sub-task: Run linter/formatting checks and ensure test coverage >80% (Refactor)
 
-- [ ] Task 3: Phase 1 Verification & Checkpoint
+- [~] Task 3: Phase 1 Verification & Checkpoint
   - [ ] Sub-task: Synchronize rules and living capability specs (`git fetch origin main`)
   - [ ] Sub-task: Run full test suite (`go test -v ./...`)
   - [ ] Sub-task: Create checkpoint commit and attach verification Git Note
