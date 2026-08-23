@@ -1,0 +1,3 @@
+Task: Update Installer Script & Documentation
+Scope: install.sh, README.md, .cooper/definition/tech-stack.md
+Summary: Updated installer fallback message and documentation references to Go 1.27.0+
