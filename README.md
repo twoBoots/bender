@@ -41,7 +41,7 @@ curl -fsSL https://raw.githubusercontent.com/twoBoots/bender/main/install.sh | b
 
 The installer will:
 1. Detect your operating system and CPU architecture.
-2. Compile and install locally if Go 1.22+ is available, or download the latest prebuilt release binary from GitHub Releases.
+2. Compile and install locally if Go 1.27.0+ is available, or download the latest prebuilt release binary from GitHub Releases.
 3. Automatically strip macOS quarantine attributes and apply code signing on Darwin.
 4. Register the `bender` binary globally into `/usr/local/bin` or `~/.local/bin`.
 

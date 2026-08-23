@@ -110,7 +110,7 @@ fi
 # Tier 3: Fallback announcement
 if [ "$CLI_INSTALLED" = false ]; then
     echo "  [!] Pre-built binary could not be fetched and local Go compiler is missing."
-    echo "      Install Go 1.22+ or download the binary manually from https://github.com/${GITHUB_REPO}/releases."
+    echo "      Install Go 1.27.0+ or download the binary manually from https://github.com/${GITHUB_REPO}/releases."
 fi
 
 echo ""

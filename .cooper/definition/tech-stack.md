@@ -2,7 +2,7 @@
  
 ## Primary Languages & Runtime
 - **Language**: Go
-- **Runtime / Engine**: Go 1.22+
+- **Runtime / Engine**: Go 1.27.0+
 - **Module Path**: `github.com/twoBoots/bender`
  
 ## Architecture & Frameworks
