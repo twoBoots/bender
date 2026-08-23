@@ -1,0 +1,3 @@
+Task: Update Go Module Runtime Directive
+Scope: go.mod
+Summary: Updated Go directive in go.mod to 1.27.0
