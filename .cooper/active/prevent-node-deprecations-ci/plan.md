@@ -1,0 +1,11 @@
+# Implementation Plan: Prevent Node Deprecation Warnings in CI/CD Workflows
+
+## Phase 1: Workflow Updates & Action Modernization
+- [x] Task 1: Update GitHub Actions workflows (`ci.yml`, `release.yml`) with modern action versions and runner flags (7a9aa2a)
+  - [x] Sub-task: Configure top-level environment variables (`FORCE_JAVASCRIPT_ACTIONS_TO_NODE20: true`, `NODE_NO_WARNINGS: "1"`) in `ci.yml`
+  - [x] Sub-task: Configure top-level environment variables in `release.yml`
+  - [x] Sub-task: Audit and pin all action steps to supported major versions
+- [x] Task 2: Phase 1 Verification & Checkpoint [checkpoint: 35c48ed]
+  - [x] Sub-task: Validate workflow YAML syntax and consistency
+  - [x] Sub-task: Run local test suite (`go test -v -coverprofile=coverage.out ./...`) and verify >80% coverage
+  - [x] Sub-task: Record Git Notes checkpoint summary
