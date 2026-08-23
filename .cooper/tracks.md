@@ -3,7 +3,7 @@
 All active and completed Cooper tracks are registered below.
 
 
-- [ ] **Track: Bump Go Runtime to 1.27.0**
+- [x] **Track: Bump Go Runtime to 1.27.0**
   - Worktree: `.worktrees/bump-go-1-27-0`
   - Link: [.cooper/active/bump-go-1-27-0/index.md](.cooper/active/bump-go-1-27-0/index.md)
 
