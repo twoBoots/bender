@@ -11,7 +11,7 @@
 - [x] Task: Update Installer Script & Documentation (abe797f)
   - [x] Sub-task: Update `install.sh` Tier 3 fallback message to reference Go 1.27.0+
   - [x] Sub-task: Update `README.md` and `.cooper/definition/tech-stack.md`
-- [ ] Task: Phase 1 Verification & Checkpoint
-  - [ ] Sub-task: Execute test suite across all packages (`go test ./...`)
-  - [ ] Sub-task: Run formatting and linting verification (`gofmt -l .`, `go vet ./...`)
-  - [ ] Sub-task: Perform git phase sync and record checkpoint notes
+- [x] Task: Phase 1 Verification & Checkpoint (dcb6860) [checkpoint: dcb6860]
+  - [x] Sub-task: Execute test suite across all packages (`go test ./...`)
+  - [x] Sub-task: Run formatting and linting verification (`gofmt -l .`, `go vet ./...`)
+  - [x] Sub-task: Perform git phase sync and record checkpoint notes
