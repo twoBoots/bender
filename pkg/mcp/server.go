@@ -46,11 +46,10 @@ func NewServer(name, version, cwd string) *Server {
 	if strings.TrimSpace(name) == "" {
 		name = "bender-mcp"
 	}
-	ver := "1.0.0"
-	if strings.TrimSpace(version) != "" {
-		ver = strings.TrimSpace(version)
-	}
-	if !strings.HasPrefix(ver, "v") {
+	ver := strings.TrimSpace(version)
+	if ver == "" {
+		ver = "dev"
+	} else if ver != "dev" && !strings.HasPrefix(ver, "v") {
 		ver = "v" + ver
 	}
 	return &Server{
