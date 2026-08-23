@@ -4,8 +4,8 @@ All active and completed Cooper tracks are registered below.
 
 
 - [x] **Track: Bump CLI Version to 1.0.1 for Release**
-  - Worktree: `.worktrees/bump-version-1-0-1`
-  - Link: [.cooper/active/bump-version-1-0-1/index.md](.cooper/active/bump-version-1-0-1/index.md)
+  - Status: Completed (Archived)
+  - Link: [.cooper/archive/track-bump-version-1-0-1/index.md](.cooper/archive/track-bump-version-1-0-1/index.md)
 
 - [x] **Track: Bump Go Runtime to 1.27.0**
   - Status: Completed (Archived)
@@ -16,8 +16,8 @@ All active and completed Cooper tracks are registered below.
   - Link: [.cooper/archive/track-bender-mcp-version-fallback/index.md](.cooper/archive/track-bender-mcp-version-fallback/index.md)
 
 - [x] **Track: Prevent Node Deprecation Warnings in CI/CD Workflows**
-  - Worktree: `.worktrees/prevent-node-deprecations-ci`
-  - Link: [.cooper/active/prevent-node-deprecations-ci/index.md](.cooper/active/prevent-node-deprecations-ci/index.md)
+  - Status: Completed (Archived)
+  - Link: [.cooper/archive/track-prevent-node-deprecations-ci/index.md](.cooper/archive/track-prevent-node-deprecations-ci/index.md)
 
 - [x] **Track: Bender Core Foundation**
   - Status: Completed (Archived)
