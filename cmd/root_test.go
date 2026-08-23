@@ -9,9 +9,9 @@ import (
 )
 
 func TestRootCmd_Version(t *testing.T) {
-	cmd.Version = "1.0.0"
+	cmd.Version = "1.0.1"
 	cmd.Commit = "abcdef"
-	cmd.BuildDate = "2026-08-21"
+	cmd.BuildDate = "2026-08-23"
 
 	var buf bytes.Buffer
 	cmd.RootCmd.SetOut(&buf)
@@ -23,8 +23,8 @@ func TestRootCmd_Version(t *testing.T) {
 	}
 
 	out := buf.String()
-	if !strings.Contains(out, "bender") || !strings.Contains(out, "1.0.0") {
-		t.Errorf("expected version output to contain 'bender' and '1.0.0', got %q", out)
+	if !strings.Contains(out, "bender") || !strings.Contains(out, "1.0.1") {
+		t.Errorf("expected version output to contain 'bender' and '1.0.1', got %q", out)
 	}
 }
 
@@ -52,5 +52,11 @@ func TestRootCmd_SemVerFormat(t *testing.T) {
 	parts := strings.Split(cmd.Version, ".")
 	if len(parts) < 3 {
 		t.Errorf("cmd.Version %q is not valid SemVer (expected at least 3 parts: major.minor.patch)", cmd.Version)
+	}
+}
+
+func TestRootCmd_DefaultVersion(t *testing.T) {
+	if cmd.Version != "1.0.1" {
+		t.Errorf("expected default cmd.Version to be '1.0.1', got %q", cmd.Version)
 	}
 }
