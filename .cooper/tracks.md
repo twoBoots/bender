@@ -3,7 +3,7 @@
 All active and completed Cooper tracks are registered below.
 
 
-- [ ] **Track: Bump CLI Version to 1.0.1 for Release**
+- [x] **Track: Bump CLI Version to 1.0.1 for Release**
   - Worktree: `.worktrees/bump-version-1-0-1`
   - Link: [.cooper/active/bump-version-1-0-1/index.md](.cooper/active/bump-version-1-0-1/index.md)
 
