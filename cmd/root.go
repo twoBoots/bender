@@ -10,7 +10,7 @@ import (
 
 var (
 	// Version variables injected at build time via -ldflags
-	Version   = "1.0.0"
+	Version   = "1.0.1"
 	Commit    = "none"
 	BuildDate = "unknown"
 )
