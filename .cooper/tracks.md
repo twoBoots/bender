@@ -4,7 +4,7 @@ All active and completed Cooper tracks are registered below.
 
 ---
 
-- [ ] **Track: Bender MCP Version Fallback Cleanup**
+- [x] **Track: Bender MCP Version Fallback Cleanup**
   - Worktree: `.worktrees/bender-mcp-version-fallback`
   - Link: [.cooper/active/bender-mcp-version-fallback/index.md](.cooper/active/bender-mcp-version-fallback/index.md)
 
