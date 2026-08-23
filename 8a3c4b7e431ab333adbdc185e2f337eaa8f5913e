@@ -1,0 +1,3 @@
+Task: Add Unit Tests for Version Fallback & Normalization (Red)
+Scope: pkg/mcp/server_test.go
+Summary: Added table-driven unit tests verifying MCP server fallback to 'dev' when version is empty or whitespace, preserving 'dev' without 'v' prefix, and normalizing semantic versions to have 'v' prefix.
