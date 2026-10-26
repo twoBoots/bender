@@ -30,3 +30,7 @@ All active and completed Cooper tracks are registered below.
 - [x] **Track: Standardize SemVer Comparison Using golang.org/x/mod/semver**
   - Status: Completed (Archived)
   - Link: [.cooper/archive/track-standardize-semver-xmod/index.md](.cooper/archive/track-standardize-semver-xmod/index.md)
+
+- [ ] **Track: Bump CLI Version to 1.1.0 for Release**
+  - Worktree: `.worktrees/bump-version-1-1-0`
+  - Link: [.cooper/active/bump-version-1-1-0/index.md](.cooper/active/bump-version-1-1-0/index.md)
