@@ -1,7 +1,7 @@
 # Implementation Plan: Bump Version to 1.1.0
 
 ## Phase 1: Version Constant & Test Updates
-- [ ] Task: Update Version Tests (Red)
+- [~] Task: Update Version Tests (Red)
   - [ ] Sub-task: Update `cmd/root_test.go` to test and assert `Version == "1.1.0"`
   - [ ] Sub-task: Run `go test ./...` and confirm failure
 - [ ] Task: Update Version Constant in cmd/root.go (Green)
