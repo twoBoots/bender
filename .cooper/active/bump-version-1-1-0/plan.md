@@ -7,6 +7,6 @@
 - [x] Task: Update Version Constant in cmd/root.go (Green) (6fab543)
   - [x] Sub-task: Update `Version = "1.1.0"` in `cmd/root.go`
   - [x] Sub-task: Run `go test ./...` and confirm all tests pass
-- [ ] Task: Phase 1 Verification & Checkpoint
-  - [ ] Sub-task: Run full test suite with coverage
-  - [ ] Sub-task: Commit checkpoint and record Git Note
+- [x] Task: Phase 1 Verification & Checkpoint
+  - [x] Sub-task: Run full test suite with coverage
+  - [x] Sub-task: Commit checkpoint and record Git Note
