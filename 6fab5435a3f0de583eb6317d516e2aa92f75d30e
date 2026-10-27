@@ -1,0 +1,3 @@
+Task: Update Version Constant in cmd/root.go (Green)
+Scope: cmd/root.go
+Summary: Updated cmd.Version to 1.1.0; confirmed all unit tests pass (Green phase).
