@@ -1,0 +1,12 @@
+# Implementation Plan: Bump Version to 1.1.0
+
+## Phase 1: Version Constant & Test Updates
+- [x] Task: Update Version Tests (Red) (8feb03f)
+  - [x] Sub-task: Update `cmd/root_test.go` to test and assert `Version == "1.1.0"`
+  - [x] Sub-task: Run `go test ./...` and confirm failure
+- [x] Task: Update Version Constant in cmd/root.go (Green) (6fab543)
+  - [x] Sub-task: Update `Version = "1.1.0"` in `cmd/root.go`
+  - [x] Sub-task: Run `go test ./...` and confirm all tests pass
+- [x] Task: Phase 1 Verification & Checkpoint [checkpoint: d6af147]
+  - [x] Sub-task: Run full test suite with coverage
+  - [x] Sub-task: Commit checkpoint and record Git Note
